@@ -1,0 +1,33 @@
+version: '3.4'
+services:
+  postgresql:
+    image: postgres:14-alpine3.15
+    container_name: postgresql
+    restart: always
+    environment:
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "1234567"
+      POSTGRES_DB: "spring-postgresql-docker"
+    ports:
+      - 5432:5432
+    networks:
+      backend:
+  java:
+    image: spring-postgresql:1.0
+    container_name: spring-com-postgresql
+    restart: always
+    environment:
+      DATABASE_URL: "jdbc:postgresql://postgresql:5432/spring-postgresql-docker"
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "1234567"
+      POSTGRES_DB: spring-postgresql-docker
+    ports:
+      - 8080:8080
+    links:
+      - postgresql
+    depends_on:
+      - postgresql
+    networks:
+      backend:
+networks:
+  backend:

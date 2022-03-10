@@ -1,0 +1,30 @@
+language: java
+jdk:
+  - oraclejdk19
+services: postgresql
+env:
+  global:
+    - PGUSER=postgres
+    - PGPORT=5432
+before_install:
+  - sudo apt-get update
+  - createdb -U postgres spring-postgresql-docker
+  - cd app/
+  - echo "Let's start maven package"
+  - mvn clean package 
+  - docker build -t spring-postgresql .
+  - docker tag spring-postgresql:latest rafaelsulimann/spring-postgresql:1.1;
+  - cd ..
+  - echo "We are in root dir"
+script:
+  - docker-compose build
+before_deploy:
+  - echo "$DOCKER_PASSWORD" | docker login --username "$DOCKER_USERNAME" --password-stdin
+deploy:
+  provider: script
+  script:
+    - docker push rafaelsulimann/spring-postgresql:1.1;
+  on:
+    branch: main
+notifications:
+  email: false
