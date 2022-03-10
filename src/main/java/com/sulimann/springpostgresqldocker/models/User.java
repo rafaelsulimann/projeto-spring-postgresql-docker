@@ -13,9 +13,11 @@ import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import org.springframework.hateoas.RepresentationModel;
+
 @Entity
 @Table(name = "tb_user")
-public class User implements Serializable {
+public class User extends RepresentationModel<User> implements Serializable {
     
     private static final long serialVersionUID = 1L;
 

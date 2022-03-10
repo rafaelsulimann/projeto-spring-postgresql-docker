@@ -13,9 +13,11 @@ import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+import org.springframework.hateoas.RepresentationModel;
+
 @Entity
 @Table(name = "tb_category")
-public class Category implements Serializable {
+public class Category extends RepresentationModel<Category> implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
