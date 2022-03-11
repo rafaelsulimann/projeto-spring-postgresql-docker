@@ -111,7 +111,13 @@ docker build -t <nome da imagem>:1.0
 
 ## 2) DOCKER COMPOSE
 
-- Vamos agora voltar para a pasta onde se encontra o arquivo **docker-compose.yml** e digitar no terminal o seguinte comando para subir os **2 containers**(API + banco) e se comunicarem entre si:
+- Vamos agora voltar para a pasta onde se encontra o arquivo **docker-compose.yml**, inserindo o seguinte comando:
+
+```java
+cd ..
+```
+
+- Após digitar no terminal o seguinte comando para subir os **2 containers**(API + banco) e se comunicarem entre si:
 
 ```java
 docker-compose up
