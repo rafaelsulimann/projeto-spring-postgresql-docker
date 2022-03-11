@@ -41,19 +41,19 @@ Porém só será possível acessar a API através dos ENDPOINTS, e para isso ser
 
 - Aqui será um pouco diferente, pois neste caso não estamos apenas buscando e sim incluindo uma entidade, então precisaremos inserir as informações que desejamos que ela tenha, e neste caso a **CATEGORY** tem apenas o **NOME**, então abaixo segue um exemplo de como deveríamos fazer para incluir uma entidade no Postman.
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/f989bf07-1969-43c1-b690-09ecd35e4c42/Untitled.png)
+![Untitled](https://user-images.githubusercontent.com/97992737/157959034-8b308f7b-a5b5-4115-bccc-70f10505ca27.png)
 
 ### PUT
 
 - Aqui da mesma forma que fizemos no **POST** nós iremos realizar no **PUT**, a diferença é que neste caso não estamos inserindo nenhum nova entidade e sim alterando um entidade ja existente, por isso é necessário que a entidade ja exista para que funcione o **PUT**. Então também neste caso devemos filtrar por **ID** e alterar as informações necessárias. Abaixo segue exemplo:
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/9e6ef918-de90-4e7c-bb82-0faf6879e9cd/Untitled.png)
+![Untitled2](https://user-images.githubusercontent.com/97992737/157959961-b25a8d9a-8cb5-4fae-90fa-5d74589c6ab1.png)
 
 ### DELETE
 
 - Aqui também se faz necessário que a entidade exista pois caso contrário não será possível deletar. Basta inserirmos a entidade com o **ID** com a requisição **DELETE** para deletar.
 
-![Untitled](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/91f92374-0497-46e1-9a1d-6ec6610637f2/Untitled.png)
+![Untitled3](https://user-images.githubusercontent.com/97992737/157960117-cd6d5463-c970-4d96-a499-8ce8d3e1e183.png)
 
 ## 2) USER
 
